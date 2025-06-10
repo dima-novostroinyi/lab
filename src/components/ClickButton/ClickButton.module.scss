@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+@import '../../styles/animations.scss';
+
+.clickArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.clickButton {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-color), var(--secondary-color));
+  border: 5px solid var(--accent-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  box-shadow: $shadow-lg;
+  position: relative;
+  overflow: hidden;
+  color: white;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.clicked {
+    transform: scale(0.95);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+  }
+
+  &:hover::before {
+    animation: shine 0.5s ease;
+  }
+}
+
+.clickIcon {
+  font-size: 4rem;
+  margin-bottom: $spacing-sm;
+}
+
+.clickText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.comboIndicator {
+  position: absolute;
+  top: -50px;
+  background: var(--accent-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  animation: bounce 0.5s ease;
+}
+
+.numberPopups {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.numberPopup {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  animation: floatUp 1s ease-out forwards;
+  white-space: nowrap;
+
+  &.lucky {
+    color: gold;
+    font-size: 2rem;
+    text-shadow: 0 0 10px gold;
+  }
+}

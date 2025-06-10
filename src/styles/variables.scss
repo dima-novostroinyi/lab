@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+  }
+  
+  $spacing-xs: 5px;
+  $spacing-sm: 10px;
+  $spacing-md: 20px;
+  $spacing-lg: 30px;
+  $spacing-xl: 40px;
+  
+  $mobile: 768px;
+  $tablet: 1024px;
+  $desktop: 1200px;
+  
+  $shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  $shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+  $shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
